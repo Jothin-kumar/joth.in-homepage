@@ -1,0 +1,61 @@
+#abt {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 69% auto auto;
+}
+#abt > * {
+    margin: auto;
+}
+#profile-card {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    max-width: 80vw;
+    text-align: center;
+}
+@media screen and (orientation: portrait) {
+    #profile-card {
+        grid-template-columns: unset;
+        grid-template-rows: auto auto;
+    }
+}
+#pfp {
+    width: 9rem;
+    height: 11rem;
+    border-radius: 5px;
+    border: darkgreen 3px solid;
+    margin: auto;
+    transition: 1s;
+}
+#pfp:hover {
+    rotate: 2deg;
+    box-shadow: rgba(144, 238, 144, 0.1) 6px 9px;
+    cursor: pointer;
+}
+#intro {
+    margin: auto 1vw;
+}
+.social-logo {
+    margin: auto 1vw;
+}
+
+#tech-stack {
+    list-style: none;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    padding: 0;
+}
+#tech-stack svg {
+    width: 3em;
+    height: auto;
+    margin: 1em;
+}
+
+#down {
+    font-size: xx-large;
+    color: rgba(255, 255, 255, .5);
+}
+#down:hover {
+    cursor: pointer;
+}
