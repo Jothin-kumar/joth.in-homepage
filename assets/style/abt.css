@@ -10,8 +10,10 @@
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
-    max-width: 80vw;
     text-align: center;
+    background-color: rgba(0, 0, 0, .69);
+    padding: 3em;
+    border-radius: 20px;
 }
 @media screen and (orientation: portrait) {
     #profile-card {
