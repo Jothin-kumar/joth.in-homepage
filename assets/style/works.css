@@ -4,6 +4,14 @@
     scrollbar-width: thin !important;
     overflow-x: hidden;
 }
+#works::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+#works::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 10px;
+}
 .work {
     width: 75vw !important;
     padding: 1em;
