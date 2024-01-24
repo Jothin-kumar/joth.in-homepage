@@ -52,6 +52,15 @@
     width: 3em;
     height: auto;
     margin: 1em;
+    animation: in 1s forwards;
+}
+@keyframes in {
+    0% {
+        scale: 0;
+    }
+    100% {
+        scale: 1;
+    }
 }
 
 #down {
