@@ -1,6 +1,5 @@
 #works {
     display: grid;
-    overflow-y: scroll;
     align-items: center;
 }
 .work {
