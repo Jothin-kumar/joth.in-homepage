@@ -1,6 +1,7 @@
 #works {
     display: grid;
     align-items: center;
+    scrollbar-width: thin !important;
 }
 .work {
     width: 80vw;

@@ -4,7 +4,7 @@ body {
     color: white;
     margin: 0;
 }
-::-webkit-scrollbar {
+#main::-webkit-scrollbar {
     display: none;
 }
 * {
