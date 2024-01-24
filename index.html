@@ -14,6 +14,28 @@
     <script src="assets/script/anim.js"></script>
 </head>
 <body onload="tooltipBodyLoaded(); bodyLoadedMain(); bodyLoadedAnim();" oncontextmenu="return false;">
+    <noscript>
+        <style>
+            #main > *, #discord-server {
+                display: none !important;
+            }
+            p {
+                width: 50vw;
+                text-align: center;
+                padding: 5em;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 0, .5);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            a {
+                color: white;
+            }
+        </style>
+        <p>Enable JavaScript in your browser. <br><a href=".">Refresh</a></p>
+    </noscript>
     <div id="main">
         <div id="abt-parent">
             <div id="abt">
