@@ -31,10 +31,11 @@ function tooltipBodyLoaded() {
     window.tooltip = document.createElement("p");
     window.tooltip.id = "tooltip";
     document.getElementById("abt").appendChild(window.tooltip);
-    window.addEventListener("scroll", () => {
+    const main = document.getElementById("main")
+    main.addEventListener("scroll", () => {
         window.tooltip.classList.add("no-display-strict");
     });
-    window.addEventListener("scrollend", () => {
+    main.addEventListener("scrollend", () => {
         window.addEventListener("mousemove", () => {
             window.tooltip.classList.remove("no-display-strict");
             window.removeEventListener("mousemove", this);
