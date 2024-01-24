@@ -1,6 +1,11 @@
 {
     "parent-dir": ".",
-    "vars": [],
+    "vars": [
+        {
+            "replaceFrom": "assets/images",
+            "replaceWith": "img"
+        }
+    ],
     "pages": [
         "/index.html"
     ],
