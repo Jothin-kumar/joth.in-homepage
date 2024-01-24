@@ -2,3 +2,4 @@ _redirects
 .wrangler
 build-output
 node_modules
+build
