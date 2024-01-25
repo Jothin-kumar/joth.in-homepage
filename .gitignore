@@ -4,3 +4,4 @@ build-output
 node_modules
 build
 url-shortener-joth.in
+.vscode/settings.json
