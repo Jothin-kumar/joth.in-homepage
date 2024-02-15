@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /cdn-cgi/
 
-Sitemap: https://joth.in/sitemap.xml
+Sitemap: https://joth.in/sitemap.txt
