@@ -13,6 +13,10 @@ printf "build.py ✅\n\n"
 cp -r assets/images build-output/img
 printf "copy images ✅\n\n"
 
+cp robots.txt build-output/robots.txt
+cp sitemap.txt build-output/sitemap.txt
+printf "robots.txt and sitemap ✅\n\n"
+
 
 if [ -d "url-shortener-joth.in" ]
 then
