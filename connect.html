@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - Jothin Kumar</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 5);
+            color: white;
+
+            user-select: none;
+        }
+        #main {
+            min-width: 40vw;
+            min-height: 50vh;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            border: white 1px solid;
+            border-radius: 10px;
+
+            padding: 10px;
+
+            transition: 2s;
+        }
+        #main:hover {
+                background-color: black;
+        }
+        @media screen and (orientation: portrait) {
+            #main {
+                width: calc(100% - 30px);
+            }
+        }
+
+        h2 {
+            color: gray;
+            border-bottom: gray 1px solid;
+        }
+
+        ul {
+            list-style-type: square;
+            color: rgb(117, 80, 32)
+        }
+        li {
+            margin: 10px auto;
+        }
+
+        a {
+            color: olive;
+            text-decoration: none;
+        }
+        a:hover {
+            color: rgba(128, 128, 0, .75);
+        }
+    </style>
+    <script>
+        window.addEventListener("contextmenu", (evt) => {
+            evt.preventDefault()
+        })
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="socials">
+            <h2># Socials</h2>
+            <ul>
+                <li>GitHub: <a href="/gh" target="_blank">@Jothin-kumar</a></li>
+                <li>Discord: <a href="/dc" target="_blank">@jothinkumar</a></li>
+                <li>InstaGram: <a href="/ig" target="_blank">@Jothin_kumar</a></li>
+                <li>X: <a href="/xt" target="_blank">@JothinKumar</a></li>
+                <li>Showwcase: <a href="/sc" target="_blank">@jothin-kumar</a></li>
+                <li>DEV Community: <a href="/dt" target="_blank">@jothinkumar</a></li>
+                <li>Hashnode: <a href="https://hashnode.com/@jothin" target="_blank">@jothin</a></li>
+                <li>DevDojo: <a href="https://devdojo.com/jothin-kumar" target="_blank">@jothin-kumar</a></li>
+                <li>YouTube: <a href="/yt" target="_blank">@jothinkumar</a></li>
+            </ul>
+        </div>
+        <div id="email">
+            <h2># Email</h2>
+            <ul>
+                <li>hi@joth.in</li>
+                <li>contact@jothin.tech</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

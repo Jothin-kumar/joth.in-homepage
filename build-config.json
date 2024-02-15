@@ -8,7 +8,8 @@
     ],
     "pages": [
         "/index.html",
-        "/404.html"
+        "/404.html",
+        "/connect.html"
     ],
     "line-end": "\n"
 }
