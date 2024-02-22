@@ -59,6 +59,7 @@
     padding: 10px;
     border-radius: 50%;
     border: black 1px solid;
+    overflow: visible;
 }
 @keyframes in {
     0% {
