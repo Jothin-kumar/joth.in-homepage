@@ -11,16 +11,76 @@
             color: white;
 
             user-select: none;
-        }
-        #main {
-            min-width: 40vw;
-            min-height: 50vh;
 
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+        }
 
+        #container {
+            position: relative;
+            transform: translate(-50%, -50%);
+        }
+        .side {
+            position: absolute;
+            translate: -50% -50%;
+            min-width: 40vw;
+            min-height: 50vh;
+        }
+        @keyframes front {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(90deg);
+            }
+        }
+        @keyframes main {
+            0% {
+                transform: rotateY(-90deg);
+            }
+            100% {
+                transform: rotateY(0);
+            }
+        }
+        #front.rotate {
+            animation: front 2s forwards;
+        }
+        #main {
+            transform: rotateY(-90deg);
+        }
+        #main.rotate {
+            animation: main 3s 2s forwards;
+        }
+
+        #front {
+            border: olive 1px solid;
+            border-radius: 10px;
+
+            padding: 10px;
+        }
+        #front-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #front-img {
+            border-radius: 50%;
+            border: olivedrab 1px solid;
+            cursor: pointer;
+        }
+        #front-img:hover {
+            box-shadow: 0 0 10px olivedrab;
+        }
+        #front-p {
+            text-align: center;
+            font-size: smaller;
+            color: gray;
+        }
+
+        #main {
             border: white 1px solid;
             border-radius: 10px;
 
@@ -62,30 +122,43 @@
         window.addEventListener("contextmenu", (evt) => {
             evt.preventDefault()
         })
+
+        function rotate() {
+            document.getElementById("front").classList.add("rotate")
+            document.getElementById("main").classList.add("rotate")
+        }
     </script>
 </head>
 <body>
-    <div id="main">
-        <div id="socials">
-            <h2># Socials</h2>
-            <ul>
-                <li>GitHub: <a href="/gh" target="_blank">@Jothin-kumar</a></li>
-                <li>Discord: <a href="/dc" target="_blank">@jothinkumar</a></li>
-                <li>InstaGram: <a href="/ig" target="_blank">@Jothin_kumar</a></li>
-                <li>X: <a href="/xt" target="_blank">@JothinKumar</a></li>
-                <li>Showwcase: <a href="/sc" target="_blank">@jothin-kumar</a></li>
-                <li>DEV Community: <a href="/dt" target="_blank">@jothinkumar</a></li>
-                <li>Hashnode: <a href="https://hashnode.com/@jothin" target="_blank">@jothin</a></li>
-                <li>DevDojo: <a href="https://devdojo.com/jothin-kumar" target="_blank">@jothin-kumar</a></li>
-                <li>YouTube: <a href="/yt" target="_blank">@jothinkumar</a></li>
-            </ul>
+    <div id="container">
+        <div id="main" class="side">
+            <div id="socials">
+                <h2># Socials</h2>
+                <ul>
+                    <li>GitHub: <a href="/gh" target="_blank">@Jothin-kumar</a></li>
+                    <li>Discord: <a href="/dc" target="_blank">@jothinkumar</a></li>
+                    <li>InstaGram: <a href="/ig" target="_blank">@Jothin_kumar</a></li>
+                    <li>X: <a href="/xt" target="_blank">@JothinKumar</a></li>
+                    <li>Showwcase: <a href="/sc" target="_blank">@jothin-kumar</a></li>
+                    <li>DEV Community: <a href="/dt" target="_blank">@jothinkumar</a></li>
+                    <li>Hashnode: <a href="https://hashnode.com/@jothin" target="_blank">@jothin</a></li>
+                    <li>DevDojo: <a href="https://devdojo.com/jothin-kumar" target="_blank">@jothin-kumar</a></li>
+                    <li>YouTube: <a href="/yt" target="_blank">@jothinkumar</a></li>
+                </ul>
+            </div>
+            <div id="email">
+                <h2># Email</h2>
+                <ul>
+                    <li>hi@joth.in</li>
+                    <li>contact@jothin.tech</li>
+                </ul>
+            </div>
         </div>
-        <div id="email">
-            <h2># Email</h2>
-            <ul>
-                <li>hi@joth.in</li>
-                <li>contact@jothin.tech</li>
-            </ul>
+        <div id="front" class="side">
+            <div id="front-content">
+                <img onclick="rotate()" src="/assets/images/favicon.webp" alt="Jothin Kumar" id="front-img">
+                <p id="front-p">&uarr; Click &uarr;</p>
+            </div>
         </div>
     </div>
 </body>
