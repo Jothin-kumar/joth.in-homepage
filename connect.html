@@ -104,6 +104,9 @@
                 width: 85vw;
                 height: 75vh;
             }
+            #front-p {
+                display: none;
+            }
         }
 
         h2 {
@@ -192,5 +195,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        if (window.getComputedStyle(document.getElementById("front-p")).display === "none") {
+            setTimeout(rotate, 1000)
+        }
+    </script>
+
 </body>
 </html>
