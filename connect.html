@@ -21,6 +21,7 @@
         #container {
             position: relative;
             transform: translate(-50%, -50%);
+            padding: 5px;
         }
         .side {
             position: absolute;
@@ -99,8 +100,9 @@
                 background-color: black;
         }
         @media screen and (orientation: portrait) {
-            #main {
-                width: calc(100% - 30px);
+            .side {
+                width: 85vw;
+                height: 75vh;
             }
         }
 
