@@ -25,6 +25,12 @@
 .work > h2 {
     border-bottom: white 1px solid;
 }
+.work a {
+    color: green;
+}
+.work a:visited {
+    color: green;
+}
 @keyframes left-in {
     0% {
         margin-left: 0;
