@@ -28,6 +28,7 @@
     border: darkgreen 3px solid;
     margin: auto;
     transition: 1s;
+    color: transparent;
 }
 #pfp:hover {
     rotate: 2deg;
