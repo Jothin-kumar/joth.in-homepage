@@ -81,11 +81,6 @@
         #front-img:hover {
             box-shadow: 0 0 10px olivedrab;
         }
-        #front-p {
-            text-align: center;
-            font-size: smaller;
-            color: gray;
-        }
 
         #main {
             border: lightgreen 1px solid;
@@ -107,9 +102,6 @@
             .side {
                 width: 85vw;
                 height: 75vh;
-            }
-            #front-p {
-                display: none;
             }
         }
 
@@ -197,18 +189,12 @@
         <div id="front" class="side">
             <div id="front-content">
                 <img src="/assets/images/favicon.webp" alt="Jothin Kumar" id="front-img">
-                <p id="front-p">&uarr; Click &uarr;</p>
             </div>
         </div>
     </div>
 
     <script>
-        if (window.getComputedStyle(document.getElementById("front-p")).display === "none") {
-            setTimeout(rotate, 1000)
-        }
-        else {
-            setTimeout(rotate, 3000)
-        }
+        setTimeout(rotate, 1500)
     </script>
 
 </body>
