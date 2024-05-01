@@ -20,6 +20,8 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+
+            overflow: hidden;
         }
 
         #container {
@@ -30,8 +32,7 @@
         .side {
             position: absolute;
             translate: -50% -50%;
-            min-width: 20vw;
-            min-height: 50vh;
+            border-radius: 50%;
         }
         @keyframes front {
             0% {
@@ -45,8 +46,12 @@
             0% {
                 transform: rotateY(-90deg);
             }
+            50% {
+                border-radius: 50%;
+            }
             100% {
                 transform: rotateY(0);
+                border-radius: 10px;
             }
         }
         #front.rotate {
@@ -58,13 +63,29 @@
         #main.rotate {
             animation: main 3s 2s forwards;
         }
-
-        #front {
-            border: olive 1px solid;
+        #main.zoom-in-out {
+            animation: zoom-main 2s forwards;
             border-radius: 10px;
-
-            padding: 10px;
         }
+        @keyframes zoom-main {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(2);
+                opacity: .5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        #main.adjust {
+            width: max-content !important;
+            height: max-content !important;
+        }
+
         #front-content {
             position: absolute;
             left: 50%;
@@ -83,13 +104,14 @@
 
         #main {
             border: lightgreen 1px solid;
-            border-radius: 10px;
 
             padding: 10px;
 
             transition: 2s;
             max-height: 90vh;
             overflow-y: scroll;
+
+            scrollbar-width: none;
         }
         #main::-webkit-scrollbar {
             display: none;
@@ -131,8 +153,22 @@
         })
 
         function rotate() {
-            document.getElementById("front").classList.add("rotate")
-            document.getElementById("main").classList.add("rotate")
+            const main = document.getElementById("main")
+            const front = document.getElementById("front")
+
+            const frontStyle = getComputedStyle(document.getElementById("front-img"))
+            main.style.width = frontStyle.width
+            main.style.height = frontStyle.height
+
+            front.classList.add("rotate")
+            main.classList.add("rotate")
+
+            setTimeout(() => {
+                main.classList.add("zoom-in-out")
+            }, 5000)
+            setTimeout(() => {
+                main.classList.add("adjust")
+            }, 6000)
         }
     </script>
 </head>
