@@ -20,10 +20,12 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+        }
 
+        * {
             scrollbar-width: none;
         }
-        body::-webkit-scrollbar {
+        *::-webkit-scrollbar {
             display: none;
         }
 
@@ -115,10 +117,6 @@
             max-height: 90vh;
             overflow-y: scroll;
 
-            scrollbar-width: none;
-        }
-        #main::-webkit-scrollbar {
-            display: none;
         }
         #main:hover {
                 background-color: black;
