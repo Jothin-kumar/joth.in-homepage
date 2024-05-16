@@ -9,7 +9,8 @@
     "pages": [
         "/index.html",
         "/404.html",
-        "/connect.html"
+        "/connect.html",
+        "/maze.html"
     ],
     "line-end": "\n"
 }
