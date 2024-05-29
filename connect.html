@@ -117,8 +117,6 @@
         }
 
         #main {
-            border: lightgreen 1px solid;
-
             padding: 10px;
 
             transition: 2s;
@@ -133,26 +131,57 @@
             }
         }
 
-        #socials {
-            white-space: nowrap;
-        }
 
         h2 {
             color: rgba(144, 238, 144, .5);
             border-bottom: rgba(144, 238, 144, .5) 1px solid;
+            width: fit-content;
+            padding: 0 10px;
+            margin: 10px auto;
+
+            font-family: sans-serif;
+            font-size: xx-large;
+            font-weight: bold;
+            white-space: nowrap;
         }
 
-        ul {
-            list-style-type: square;
-            color: rgb(117, 80, 32)
+        .list-container {
+            max-width: 50vw;
+            text-align: center;
+            color: rgb(117, 80, 32);
         }
-        li {
-            margin: 10px auto;
+        @media screen and (orientation: portrait) {
+            .list-container {
+                max-width: 85vw;
+            }
+        }
+        .list-item {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px;
+            border-color: darkgreen;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            box-shadow: 0 0 5px darkgreen;
+            border-radius: 10px;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        @media screen and (orientation: portrait) {
+            .list-item {
+                display: block;
+            }
         }
 
         a {
             color: olive;
             text-decoration: none;
+
+            font-family: monospace;
+            font-weight: lighter;
         }
         a:hover {
             color: rgba(128, 128, 0, .75);
@@ -215,26 +244,26 @@
         <div id="main" class="side">
             <div id="socials">
                 <h2># Socials</h2>
-                <ul>
-                    <li>GitHub: <a href="/gh" target="_blank">@Jothin-kumar</a></li>
-                    <li>Discord: <a href="/dc" target="_blank">@jothinkumar</a></li>
-                    <li>InstaGram: <a href="/ig" target="_blank">@Jothin_kumar</a></li>
-                    <li>X: <a href="/xt" target="_blank">@JothinKumar</a></li>
-                    <li>Showwcase: <a href="/sc" target="_blank">@jothin-kumar</a></li>
-                    <li>DEV Community: <a href="/dt" target="_blank">@jothinkumar</a></li>
-                    <li>Hashnode: <a href="https://hashnode.com/@jothin" target="_blank">@jothin</a></li>
-                    <li>DevDojo: <a href="https://devdojo.com/jothin-kumar" target="_blank">@jothin-kumar</a></li>
-                    <li>YouTube: <a href="/yt" target="_blank">@jothinkumar</a></li>
-                    <li>Peerlist: <a href="/pl" target="_blank">@jothin</a></li>
-                    <li>fueler: <a href="/fi" target="_blank">@jothin</a></li>
-                </ul>
+                <div class="list-container">
+                    <div class="list-item">GitHub - <a href="/gh" target="_blank">@Jothin-kumar</a></div>
+                    <div class="list-item">Discord - <a href="/dc" target="_blank">@jothinkumar</a></div>
+                    <div class="list-item">InstaGram - <a href="/ig" target="_blank">@Jothin_kumar</a></div>
+                    <div class="list-item">X - <a href="/xt" target="_blank">@JothinKumar</a></div>
+                    <div class="list-item">Showwcase - <a href="/sc" target="_blank">@jothin-kumar</a></div>
+                    <div class="list-item">DEV Community - <a href="/dt" target="_blank">@jothinkumar</a></div>
+                    <div class="list-item">Hashnode - <a href="https://hashnode.com/@jothin" target="_blank">@jothin</a></div>
+                    <div class="list-item">DevDojo - <a href="https://devdojo.com/jothin-kumar" target="_blank">@jothin-kumar</a></div>
+                    <div class="list-item">YouTube - <a href="/yt" target="_blank">@jothinkumar</a></div>
+                    <div class="list-item">Peerlist - <a href="/pl" target="_blank">@jothin</a></div>
+                    <div class="list-item">fueler - <a href="/fi" target="_blank">@jothin</a></div>
+                </div>
             </div>
             <div id="email">
                 <h2># Email</h2>
-                <ul>
-                    <li>hi@joth.in</li>
-                    <li>contact@jothin.tech</li>
-                </ul>
+                <div class="list-container">
+                    <div class="list-item">hi@joth.in</div>
+                    <div class="list-item">contact@jothin.tech</div>
+                </div>
             </div>
         </div>
         <div id="front" class="side">
