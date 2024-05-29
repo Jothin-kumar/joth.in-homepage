@@ -64,6 +64,7 @@
         }
         #main {
             transform: rotateY(-90deg);
+            opacity: .25;
         }
         #main.rotate {
             animation: main 3s 2s forwards;
@@ -75,11 +76,11 @@
         @keyframes zoom-main {
             0% {
                 transform: scale(1);
-                opacity: 1;
+                opacity: .25;
             }
             50% {
-                transform: scale(2);
-                opacity: .5;
+                transform: scale(3);
+                opacity: .25;
             }
             100% {
                 transform: scale(1);
@@ -125,14 +126,15 @@
             overflow-y: scroll;
 
         }
-        #main:hover {
-                background-color: black;
-        }
         @media screen and (orientation: portrait) {
             .side {
                 width: 85vw;
                 height: 75vh;
             }
+        }
+
+        #socials {
+            white-space: nowrap;
         }
 
         h2 {
@@ -177,13 +179,12 @@
 
             front.classList.add("rotate")
             main.classList.add("rotate")
+            await sleep(5000)
 
-            setTimeout(() => {
-                main.classList.add("zoom-in-out")
-            }, 5000)
-            setTimeout(() => {
-                main.classList.add("adjust")
-            }, 6000)
+            main.classList.add("zoom-in-out")
+            await sleep(1000)
+
+            main.classList.add("adjust")
         }
     </script>
 </head>
