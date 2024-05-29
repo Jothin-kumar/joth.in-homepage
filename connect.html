@@ -71,6 +71,12 @@
             transform: rotateY(-90deg);
             opacity: .25;
         }
+        #main.just-show {
+            transform: rotateY(0);
+            opacity: 1;
+            scale: 1;
+            border-radius: 10px;
+        }
         #main.rotate {
             animation: main 3s 2s forwards;
         }
@@ -189,6 +195,21 @@
             background-color: rgba(0, 200, 0, .1);
             cursor: pointer;
         }
+        #main.animate-li .list-item {
+            opacity: 0;
+            scale: .5;
+            animation: animate-li 3s forwards;
+        }
+        @keyframes animate-li {
+            0% {
+                opacity: 0;
+                scale: .5;
+            }
+            100% {
+                opacity: 1;
+                scale: 1;
+            }
+        }
 
         a.link {
             color: olive;
@@ -242,6 +263,15 @@
         function goTo(url) {
             if (!window.animDone) return
             window.location.href = url
+        }
+
+        function justShowTheContactDetails() {
+            const main = document.getElementById("main")
+            const front = document.getElementById("front")
+            front.style.display = "none"
+            main.classList.add("just-show")
+            main.classList.add("adjust")
+            main.classList.add("animate-li")
         }
     </script>
 </head>
@@ -302,7 +332,13 @@
     </div>
 
     <script>
-        setTimeout(rotate, 1500)
+        if (document.cookie === "main-anim-shown") {
+            justShowTheContactDetails()
+        }
+        else {
+            setTimeout(rotate, 1500)
+            document.cookie = "main-anim-shown"
+        }
     </script>
 
 </body>
