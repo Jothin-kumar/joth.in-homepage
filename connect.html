@@ -158,7 +158,7 @@
         .list-item {
             display: inline-block;
             margin: 20px;
-            padding: 10px;
+            padding: 20px;
             border-color: darkgreen;
             border-style: solid;
             border-width: 0 2px 2px 0;
@@ -175,15 +175,29 @@
                 display: block;
             }
         }
+        .list-item.clickable {
+            cursor: default;
+        }
+        #main.adjust .list-item.clickable:hover {
+            background-color: rgba(0, 200, 0, .1);
+            cursor: pointer;
+        }
 
-        a {
+        a.link {
             color: olive;
             text-decoration: none;
 
             font-family: monospace;
             font-weight: lighter;
+
+            pointer-events: none;
+            cursor: default;
         }
-        a:hover {
+        #main.adjust a.link {
+            pointer-events: auto;
+            cursor: pointer;
+        }
+        #main.adjust a.link:hover {
             color: rgba(128, 128, 0, .75);
         }
     </style>
@@ -214,6 +228,13 @@
             await sleep(1000)
 
             main.classList.add("adjust")
+
+            window.animDone = true
+        }
+
+        function goTo(url) {
+            if (!window.animDone) return
+            window.location.href = url
         }
     </script>
 </head>
@@ -245,17 +266,17 @@
             <div id="socials">
                 <h2># Socials</h2>
                 <div class="list-container">
-                    <div class="list-item">GitHub - <a href="/gh" target="_blank">@Jothin-kumar</a></div>
-                    <div class="list-item">Discord - <a href="/dc" target="_blank">@jothinkumar</a></div>
-                    <div class="list-item">InstaGram - <a href="/ig" target="_blank">@Jothin_kumar</a></div>
-                    <div class="list-item">X - <a href="/xt" target="_blank">@JothinKumar</a></div>
-                    <div class="list-item">Showwcase - <a href="/sc" target="_blank">@jothin-kumar</a></div>
-                    <div class="list-item">DEV Community - <a href="/dt" target="_blank">@jothinkumar</a></div>
-                    <div class="list-item">Hashnode - <a href="https://hashnode.com/@jothin" target="_blank">@jothin</a></div>
-                    <div class="list-item">DevDojo - <a href="https://devdojo.com/jothin-kumar" target="_blank">@jothin-kumar</a></div>
-                    <div class="list-item">YouTube - <a href="/yt" target="_blank">@jothinkumar</a></div>
-                    <div class="list-item">Peerlist - <a href="/pl" target="_blank">@jothin</a></div>
-                    <div class="list-item">fueler - <a href="/fi" target="_blank">@jothin</a></div>
+                    <div onclick="goTo('/gh')" class="list-item clickable">GitHub - <a class="link" href="/gh">@Jothin-kumar</a></div>
+                    <div onclick="goTo('/dc')" class="list-item clickable">Discord - <a class="link" href="/dc">@jothinkumar</a></div>
+                    <div onclick="goTo('/ig')" class="list-item clickable">InstaGram - <a class="link" href="/ig">@Jothin_kumar</a></div>
+                    <div onclick="goTo('/xt')" class="list-item clickable">X - <a class="link" href="/xt">@JothinKumar</a></div>
+                    <div onclick="goTo('/sc')" class="list-item clickable">Showwcase - <a class="link" href="/sc">@jothin-kumar</a></div>
+                    <div onclick="goTo('/dt')" class="list-item clickable">DEV Community - <a class="link" href="/dt">@jothinkumar</a></div>
+                    <div onclick="goTo('https://hashnode.com/@jothin')" class="list-item clickable">Hashnode - <a class="link" href="https://hashnode.com/@jothin">@jothin</a></div>
+                    <div onclick="goTo('https://devdojo.com/jothin-kumar')" class="list-item clickable">DevDojo - <a class="link" href="https://devdojo.com/jothin-kumar">@jothin-kumar</a></div>
+                    <div onclick="goTo('/yt')" class="list-item clickable">YouTube - <a class="link" href="/yt">@jothinkumar</a></div>
+                    <div onclick="goTo('/pl')" class="list-item clickable">Peerlist - <a class="link" href="/pl">@jothin</a></div>
+                    <div onclick="goTo('/fi')" class="list-item clickable">fueler - <a class="link" href="/fi">@jothin</a></div>
                 </div>
             </div>
             <div id="email">
