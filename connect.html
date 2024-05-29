@@ -100,12 +100,19 @@
         }
         #front-img {
             border-radius: 50%;
-            border: olivedrab 1px solid;
+            border: green 3px solid;
             max-height: 30vh;
             width: auto;
+            scale: .88;
+            opacity: .69;
+
+            transition: box-shadow 690ms, scale 500ms, opacity 500ms, border 690ms;
         }
-        #front-img:hover {
-            box-shadow: 0 0 10px olivedrab;
+        #front-img.light-up-front-img {
+            border: olive 3px solid;
+            box-shadow: 0 0 15px olive;
+            scale: 1;
+            opacity: 1;
         }
 
         #main {
@@ -154,13 +161,19 @@
             evt.preventDefault()
         })
 
-        function rotate() {
+        const sleep = (ms) => new Promise(r => setTimeout(r, ms))
+
+        async function rotate() {
             const main = document.getElementById("main")
             const front = document.getElementById("front")
+            const frontImg = document.getElementById("front-img")
 
-            const frontStyle = getComputedStyle(document.getElementById("front-img"))
-            main.style.width = frontStyle.width
-            main.style.height = frontStyle.height
+            const frontImgStyle = getComputedStyle(frontImg)
+            main.style.width = frontImgStyle.width
+            main.style.height = frontImgStyle.height
+
+            frontImg.classList.add("light-up-front-img")
+            await sleep(2000)
 
             front.classList.add("rotate")
             main.classList.add("rotate")
