@@ -4,92 +4,11 @@
         <style>
             body {
                 background-color: black;
-                color: white;
-                user-select: none;
-            }
-            div {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-            }
-            a {
-                background-color: black;
-                color: white;
-                text-decoration: none;
-                cursor: pointer;
-                border: olive 1px solid;
-                padding: 10px;
-                font-size: small;
-                border-radius: 10px;
-                margin: auto;
             }
         </style>
         <script>
-            window.addEventListener("contextmenu", function(e) {
-                e.preventDefault();
-            });
+            window.location.href = `https://a-maze.jothin.tech/share?id=${window.location.href.split('?id=')[1]}`;
         </script>
     </head>
-    <body>
-        <div>
-            <p id="msg">Loading shared maze...</p>
-            <br>
-            <a href="https://a-maze.jothin.tech/play-2d">New Maze</a>
-        </div>
-        <script>
-            function declareInvalid() {
-                const msg = document.getElementById("msg")
-                msg.innerText = "Invalid shared maze"
-                msg.style.color = "red"
-            }
-
-            async function main() {
-                const usp = new URLSearchParams(window.location.search)
-                if (usp.has("id")) {
-                    try {
-                        const r = await fetch(`https://share-maze.jothin.tech/get?maze-id=${usp.get("id")}`)
-                        let mazeData = (await r.json())["output"]
-                        if (!mazeData) {
-                            declareInvalid()
-                            return
-                        }
-                        const lvl = {
-                            "e": "easy",
-                            "m": "medium",
-                            "h": "hard"
-                        }[mazeData[0]]
-                        if (!lvl) {
-                            declareInvalid()
-                            return
-                        }
-                        mazeData = mazeData.slice(1)
-                        window.location.href = `https://a-maze.jothin.tech/2d?maze-data=${mazeData}&level=${lvl}&share-url=joth.in%2Fmaze%3Fid%3D${usp.get("id")}`
-                    }
-                    catch (e) {
-                        declareInvalid()
-                    }
-                }
-                else {
-                    declareInvalid()
-                }
-            }
-            main()
-        </script>
-        <noscript>
-            <style>
-                a {
-                    display: none;
-                }
-                p {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-            </style>
-            <p>This application requires JavaScript. Enable it and refresh the page</p>
-        </noscript>
-    </body>
+    <body></body>
 </html>
