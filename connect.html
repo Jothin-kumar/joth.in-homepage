@@ -70,12 +70,16 @@
         #main {
             transform: rotateY(-90deg);
             opacity: .25;
+            background-color: olive;
+            filter: blur(3px);
         }
         #main.just-show {
             transform: rotateY(0);
             opacity: 1;
             scale: 1;
             border-radius: 10px;
+            background-color: black;
+            filter: blur(0);
         }
         #main.rotate {
             animation: main 3s 2s forwards;
@@ -88,6 +92,8 @@
             0% {
                 transform: scale(1);
                 opacity: .25;
+                background-color: olive;
+                filter: blur(3px);
             }
             50% {
                 transform: scale(3);
@@ -96,6 +102,8 @@
             100% {
                 transform: scale(1);
                 opacity: 1;
+                background-color: black;
+                filter: blur(0);
             }
         }
         #main.adjust {
@@ -300,8 +308,15 @@
     </noscript>
     <div id="container">
         <div id="main" class="side">
+            <div id="email">
+                <h2>Email</h2>
+                <div class="list-container">
+                    <div class="list-item">hi@joth.in</div>
+                    <div class="list-item">contact@jothin.tech</div>
+                </div>
+            </div>
             <div id="socials">
-                <h2># Socials</h2>
+                <h2>Socials</h2>
                 <div class="list-container">
                     <div onclick="goTo('/gh')" class="list-item clickable">GitHub - <a class="link" href="/gh">@Jothin-kumar</a></div>
                     <div onclick="goTo('/dc')" class="list-item clickable">Discord - <a class="link" href="/dc">@jothinkumar</a></div>
@@ -314,13 +329,6 @@
                     <div onclick="goTo('/yt')" class="list-item clickable">YouTube - <a class="link" href="/yt">@jothinkumar</a></div>
                     <div onclick="goTo('/pl')" class="list-item clickable">Peerlist - <a class="link" href="/pl">@jothin</a></div>
                     <div onclick="goTo('/fi')" class="list-item clickable">fueler - <a class="link" href="/fi">@jothin</a></div>
-                </div>
-            </div>
-            <div id="email">
-                <h2># Email</h2>
-                <div class="list-container">
-                    <div class="list-item">hi@joth.in</div>
-                    <div class="list-item">contact@jothin.tech</div>
                 </div>
             </div>
         </div>
